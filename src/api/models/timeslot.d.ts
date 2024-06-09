@@ -1,14 +1,17 @@
-import { Timestamp } from "mongodb";
+import { ObjectId } from "mongodb";
 
+/** 
+ * Timeslot data type
+ */
 export interface Timeslot {
 
-    _id : string;
+    _id : ObjectId | undefined;
 
     movieId : string;
 
-    availableCapacity : Number;
+    remainingCapacity : number;
 
-    capacity : Number;
+    capacity : number;
 
     startDate: Date;
 
