@@ -37,6 +37,10 @@ export function validateReserveTimeslotRequest(req: Request,res: Response,next: 
     if(requestBody.movieId && requestBody.numberOfreserves && requestBody.timeslotId && requestBody.uid && requestBody.numberOfreserves > 0)
         return next()
 
+    // checks if number of reserves more than 0 otherwise it will return bad request
+    if(requestBody.numberOfreserves! < 0)
+        return res.send_badRequest("reserves must be more than 0")
+
     // otherwise return Bad request response
     return res.send_badRequest("Missing arguments expected")
 
