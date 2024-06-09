@@ -1,11 +1,15 @@
+import { ObjectId } from "mongodb";
 import { Timeslot } from "./timeslot";
 
 
+/** 
+ * Movie data type
+ */
 export interface Movie {
 
-    _id: string;
+    _id: ObjectId | undefined;
 
-    name: string;
+    title: string;
 
     description: string;
 
