@@ -34,7 +34,7 @@ export function validateReserveTimeslotRequest(req: Request,res: Response,next: 
     const requestBody = req.body as ReserveTimeslotRequest
 
     // checks if the requestBody isn't undefiend if that so { Go next() }
-    if(requestBody.movieId && requestBody.numberOfreserves && requestBody.timeslotId && requestBody.uid)
+    if(requestBody.movieId && requestBody.numberOfreserves && requestBody.timeslotId && requestBody.uid && requestBody.numberOfreserves > 0)
         return next()
 
     // otherwise return Bad request response
